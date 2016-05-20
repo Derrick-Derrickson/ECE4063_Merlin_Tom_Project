@@ -40,7 +40,6 @@
 //   V1.0 :| Keith Shen        :| 08/04/16  :| Initial Revision
 // --------------------------------------------------------------------
 
-module DE2_70
 	(
 		////////////////////	Clock Input	 	////////////////////	 
 		iCLK_28,						//  28.63636 MHz
@@ -211,6 +210,8 @@ module DE2_70
 		GPIO_CLKIN_P1,                  //	GPIO Connection 1 Clock Input 1
 		GPIO_CLKOUT_N1,                 //	GPIO Connection 1 Clock Output 0
 		GPIO_CLKOUT_P1                  //	GPIO Connection 1 Clock Output 1
+		///////////////// OURSTUFF ///////////////////////////
+		
 	   
 	);
 
@@ -434,6 +435,10 @@ wire	[9:0]	oVGA_B;   				//	VGA Blue[9:0]
 reg		[1:0]	rClk;
 wire			sdram_ctrl_clk;
 
+// OURSTUFF
+wire 	[7:0] GREY;
+wire 		GREY_DVAL;
+
 //=============================================================================
 // Structural coding
 //=============================================================================
@@ -534,8 +539,14 @@ sdram_pll 			u6	(	.inclk0(iCLK_50_3),
 
 assign CCD_MCLK = rClk[0];
 
-wire [15:0] wr1_data = iSW[1]? (X_Cont[3]/*^ Frame_Cont[0]*/? 15'b111111111111111:15'b0): {sCCD_G[11:7],	 sCCD_B[11:2]};
-wire [15:0] wr2_data = iSW[1]? (X_Cont[3]/*^ Frame_Cont[0]*/? 10'b111111111111111:15'b0): {sCCD_G[6:2],    sCCD_R[11:2]};
+Greyscale wine1 (.iCLK(CCD_PIXCLK),.iRST_n(DLY_RST_1),
+						.iRed(sCCD_R),.iGreen(sCCD_G),
+						.iBlue(sCCD_B),.iDval(sCCD_DVAL),
+						.iY_Cont(Y_Cont),.oDval(GREY_DVAL),
+						.oGrey(GREY));
+
+wire [15:0] wr1_data = iSW[0]? {GREY[7:3], GREY[7:0],2b'0}: {sCCD_G[11:7],	 sCCD_B[11:2]};
+wire [15:0] wr2_data = iSW[0]? {GREY[2:0],2b'0, GREY[7:0],2b'0}: {sCCD_G[6:2],    sCCD_R[11:2]};
 
 // LK: The SDRAM is used as a frame buffer using two of these Sdram_Control_4Port modules -  one for each SDRAM chip on the DE2-70 board.
 //     Camera data is loaded into the FIFO Write Side 1 and read out by the LCD display driver.
@@ -548,7 +559,7 @@ Sdram_Control_4Port	u7	(	//	HOST Side
 							//	FIFO Write Side 1
 						    .WR1_DATA(wr1_data),  // LK: Camera Green and Blue components.
 //						    .WR1_DATA({sCCD_G[11:7],	 sCCD_B[11:2]}),  // LK: Camera Green and Blue components.
-							.WR1(sCCD_DVAL),							  // LK: When 1 data is written to memory via FIFO on next WR1_CLK edge 
+							.WR1(GREY_DVAL),							  // LK: When 1 data is written to memory via FIFO on next WR1_CLK edge 
 							.WR1_ADDR(0),									// LK: SDRAM start address - do not alter!
 							.WR1_MAX_ADDR(800*480),							//LK:  Buffer size.  Needs a RESET_N to take effect.
 							.WR1_LENGTH(9'h100),							// LK: SDRAM line length of 256 - do not alter!							
