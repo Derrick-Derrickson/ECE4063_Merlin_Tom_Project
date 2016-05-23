@@ -17,7 +17,8 @@ input [15:0] iY_cont,
 input [15:0] iX_cont,
 input	Dval,
 input Fval,
-input [7:0] Grey
+input [7:0] Grey,
+output [7:0] Gr_Out;
 )
 
 wire [11:0] SRAM_W_Addr_In;
@@ -43,6 +44,7 @@ reg [11:0] addrHolding;
 reg [2:0] state;
 reg writeEnable;
 reg [7:0] PixCount;
+reg [19:0] CumVal;
 
 HisRam SRAM(
 	.clock(iPclk),
@@ -89,9 +91,11 @@ always@ (posedge iPclk) begin
 			end
 		2: begin //Copy the DISPLAY HISTOGRAM and CALC the CUM
 				PixCount = PixCount + 1;
+				CumVal = SRAM_Q_Out + CumVal;
 				if(PixCount >= 255) begin
 					state = 3;
 					PixCount = 0;
+					CumVal = 0;
 				end
 			end
 		3: begin	//CLEAR THE NORMAL HISTOGRAM
@@ -108,21 +112,21 @@ always@ (posedge iPclk) begin
 	
 	
 end
-assign SRAM_R_Addr_In[11:0] =				state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/ {4'b0000,Grey}: /*2*/0);
-assign SRAM_D_In[19:0] = 					state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/holding : /*2*/0);
-assign SRAM_W_Addr_In[11:0] = 			state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/AddrHolding: /*2*/0);
-assign SRAM_Wen = 							state[0]?(state[1]? /*1*/0 : /*3*/1) :(state[1]? /*0*/ 1: /*2*/0);
+assign SRAM_R_Addr_In[11:0] =				state[0]?(state[1]? /*1*/0 : /*3*/0) 			:(state[1]? /*0*/ {4'b0000,Grey}: /*2*/PixCount);
+assign SRAM_D_In[19:0] = 					state[0]?(state[1]? /*1*/0 : /*3*/0) 			:(state[1]? /*0*/holding :			 /*2*/0);
+assign SRAM_W_Addr_In[11:0] = 			state[0]?(state[1]? /*1*/0 : /*3*/PixCount) 	:(state[1]? /*0*/AddrHolding:		 /*2*/0);
+assign SRAM_Wen = 							state[0]?(state[1]? /*1*/0 : /*3*/1) 			:(state[1]? /*0*/ 1:					 /*2*/0);
 
-assign DISP_SRAM_R_Addr_In[11:0] = 		state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/0: /*2*/0);
-assign DISP_SRAM_D_In[19:0] = 			state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/0 : /*2*/0);
-assign DISP_SRAM_W_Addr_In[11:0] = 		state[0]?(state[1]? /*1*/PixCount : /*3*/0) :(state[1]? /*0*/0: /*2*/0);
-assign DISP_SRAM_Wen = 						state[0]?(state[1]? /*1*/1 : /*3*/0) :(state[1]? /*0*/0: /*2*/0);
+assign DISP_SRAM_R_Addr_In[11:0] = 		state[0]?(state[1]? /*1*/0 : /*3*/0) 			:(state[1]? /*0*/0+: /*2*/0);
+assign DISP_SRAM_D_In[19:0] = 			state[0]?(state[1]? /*1*/0 : /*3*/0) 			:(state[1]? /*0*/0: /*2*/SRAM_Q_Out);
+assign DISP_SRAM_W_Addr_In[11:0] = 		state[0]?(state[1]? /*1*/PixCount : /*3*/0) 	:(state[1]? /*0*/0: /*2*/PixCount);
+assign DISP_SRAM_Wen = 						state[0]?(state[1]? /*1*/1 : /*3*/0) 			:(state[1]? /*0*/0: /*2*/1);
 
 
-assign CUM_SRAM_R_Addr_In[11:0] = 		state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/ {4'b0000,Grey}: /*2*/0);
-assign CUM_SRAM_D_In[19:0] = 			state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/holding : /*2*/0);
-assign CUM_SRAM_W_Addr_In[11:0] = 		state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/AddrHolding: /*2*/0);
-assign CUM_SRAM_Wen = 						state[0]?(state[1]? /*1*/0 : /*3*/1) :(state[1]? /*0*/ 1: /*2*/0);
+assign CUM_SRAM_R_Addr_In[11:0] = 		state[0]?(state[1]? /*1*/0 : /*3*/0) 			:(state[1]? /*0*/0: /*2*/0);
+assign CUM_SRAM_D_In[19:0] = 				state[0]?(state[1]? /*1*/0 : /*3*/0) 			:(state[1]? /*0*/0: /*2*/CumVal);
+assign CUM_SRAM_W_Addr_In[11:0] = 		state[0]?(state[1]? /*1*/PixCount : /*3*/0) 	:(state[1]? /*0*/0: /*2*/PixCount);
+assign CUM_SRAM_Wen = 						state[0]?(state[1]? /*1*/1 : /*3*/0) 			:(state[1]? /*0*/0: /*2*/1);
 
 
 
