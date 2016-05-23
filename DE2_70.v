@@ -535,17 +535,20 @@ sdram_pll 			u6	(	.inclk0(iCLK_50_3),
 assign CCD_MCLK = rClk[0];
 wire [7:0] Gr_Out_His_D;
 wire [7:0] Gr_Out_Cum_D;
+
 Histo H0(
-CCD_PIXCLK,
-Y_cont,
-X_cont,
-rCCD_FVAL,
-rCCD_FVAL,
+	CCD_PIXCLK,
+	Y_cont,
+	X_cont,
+	sCCD_DVAL,
+	sCCD_DVAL,
 sCCD_R[11:4],
 Gr_Out_His_D,
 Gr_Out_Cum_D,
 oLEDR[1:0]
 );
+
+assign oLEDR[9:2] = Gr_Out_His_D;
 
 wire [15:0] wr1_data = iSW[1]? ({Gr_Out_His_D[7:4],Gr_Out_His_D}): {sCCD_G[11:7],	 sCCD_B[11:2]};
 wire [15:0] wr2_data = iSW[1]? ({Gr_Out_His_D[3:0],Gr_Out_His_D}): {sCCD_G[6:2],    sCCD_R[11:2]};
