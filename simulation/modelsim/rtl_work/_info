@@ -1,0 +1,68 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\tjmer2.MONASH\GIT\ECE4063\simulation\modelsim
+vHisto
+Iibkg2E>8dWH:c;5Wc0HLO0
+VZ>d20PZMkf^S^F6nNShhT2
+Z1 dC:\Users\tjmer2.MONASH\GIT\ECE4063\simulation\modelsim
+w1463988921
+8C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v
+FC:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v
+L0 14
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+n@histo
+!i10b 1
+!s100 ]hoX9d5iiBm8oPE_]=D3e1
+!s85 0
+!s108 1463991305.976000
+!s107 C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/tjmer2.MONASH/GIT/ECE4063|C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v|
+!s101 -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/Users/tjmer2.MONASH/GIT/ECE4063 -O0
+vSRAM
+!i10b 1
+!s100 k;:5WYz9]d_5LGiao7Fi93
+I4Dj0T^zZ5?US1F9K>C[M=2
+VWeT37elcWa<mF9CJWMBTB0
+R1
+w1463991283
+8C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v
+FC:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v
+L0 39
+R2
+r1
+!s85 0
+31
+!s108 1463991306.180000
+!s107 C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/tjmer2.MONASH/GIT/ECE4063|C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v|
+!s101 -O0
+R3
+R4
+n@s@r@a@m
+vtestbench_Histogram
+IRo>kZ:le6I34l0EDMQD_12
+Vl1?a53L9^?6]A_=;4J7Sa1
+R1
+w1463989828
+8C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v
+FC:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v
+L0 3
+R2
+r1
+31
+R3
+ntestbench_@histogram
+!i10b 1
+!s100 W^WlW[P:FE1GA74TQUAMk2
+!s85 0
+!s108 1463991305.825000
+!s107 C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench|C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v|
+!s101 -O0
+!s92 -vlog01compat -work work {+incdir+C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench} -O0

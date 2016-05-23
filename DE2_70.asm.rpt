@@ -1,6 +1,6 @@
 Assembler report for DE2_70
-Wed May 18 14:12:16 2016
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Mon May 23 19:05:15 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
 ---------------------
@@ -10,8 +10,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: D:/ECE4063/DE2_70.sof
-  6. Assembler Device Options: D:/ECE4063/DE2_70.pof
+  5. Assembler Device Options: C:/Users/tjmer2.MONASH/GIT/ECE4063/DE2_70.sof
+  6. Assembler Device Options: C:/Users/tjmer2.MONASH/GIT/ECE4063/DE2_70.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed May 18 14:12:16 2016 ;
+; Assembler Status      ; Successful - Mon May 23 19:05:15 2016 ;
 ; Revision Name         ; DE2_70                                ;
 ; Top-level Entity Name ; DE2_70                                ;
 ; Family                ; Cyclone II                            ;
@@ -79,37 +79,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+---------------------------+
-; Assembler Generated Files ;
-+---------------------------+
-; File Name                 ;
-+---------------------------+
-; D:/ECE4063/DE2_70.sof     ;
-; D:/ECE4063/DE2_70.pof     ;
-+---------------------------+
++-----------------------------------------------+
+; Assembler Generated Files                     ;
++-----------------------------------------------+
+; File Name                                     ;
++-----------------------------------------------+
+; C:/Users/tjmer2.MONASH/GIT/ECE4063/DE2_70.sof ;
+; C:/Users/tjmer2.MONASH/GIT/ECE4063/DE2_70.pof ;
++-----------------------------------------------+
 
 
-+-------------------------------------------------+
-; Assembler Device Options: D:/ECE4063/DE2_70.sof ;
-+----------------+--------------------------------+
-; Option         ; Setting                        ;
-+----------------+--------------------------------+
-; Device         ; EP2C70F896C6                   ;
-; JTAG usercode  ; 0xFFFFFFFF                     ;
-; Checksum       ; 0x00758FB6                     ;
-+----------------+--------------------------------+
++-------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/tjmer2.MONASH/GIT/ECE4063/DE2_70.sof ;
++----------------+--------------------------------------------------------+
+; Option         ; Setting                                                ;
++----------------+--------------------------------------------------------+
+; Device         ; EP2C70F896C6                                           ;
+; JTAG usercode  ; 0xFFFFFFFF                                             ;
+; Checksum       ; 0x00782BE8                                             ;
++----------------+--------------------------------------------------------+
 
 
-+-------------------------------------------------+
-; Assembler Device Options: D:/ECE4063/DE2_70.pof ;
-+--------------------+----------------------------+
-; Option             ; Setting                    ;
-+--------------------+----------------------------+
-; Device             ; EPCS16                     ;
-; JTAG usercode      ; 0x00000000                 ;
-; Checksum           ; 0x185B898A                 ;
-; Compression Ratio  ; 3                          ;
-+--------------------+----------------------------+
++-------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/tjmer2.MONASH/GIT/ECE4063/DE2_70.pof ;
++--------------------+----------------------------------------------------+
+; Option             ; Setting                                            ;
++--------------------+----------------------------------------------------+
+; Device             ; EPCS16                                             ;
+; JTAG usercode      ; 0x00000000                                         ;
+; Checksum           ; 0x18543316                                         ;
+; Compression Ratio  ; 3                                                  ;
++--------------------+----------------------------------------------------+
 
 
 +--------------------+
@@ -117,15 +117,15 @@ applicable agreement for further details.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed May 18 14:12:12 2016
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Mon May 23 19:05:11 2016
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DE2_70 -c DE2_70
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 462 megabytes
-    Info: Processing ended: Wed May 18 14:12:16 2016
+    Info: Peak virtual memory: 470 megabytes
+    Info: Processing ended: Mon May 23 19:05:15 2016
     Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

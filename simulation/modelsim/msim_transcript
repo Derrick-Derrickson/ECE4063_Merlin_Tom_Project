@@ -1,0 +1,156 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do DE2_70_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/tjmer2.MONASH/GIT/ECE4063/Test\ Bench {C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module testbench_Histogram
+# 
+# Top level modules:
+# 	testbench_Histogram
+# vlog -vlog01compat -work work +incdir+C:/Users/tjmer2.MONASH/GIT/ECE4063 {C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Histo
+# 
+# Top level modules:
+# 	Histo
+# vlog -vlog01compat -work work +incdir+C:/Users/tjmer2.MONASH/GIT/ECE4063 {C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SRAM
+# 
+# Top level modules:
+# 	SRAM
+# 
+vsim work.testbench_Histogram
+# vsim work.testbench_Histogram 
+# Loading work.testbench_Histogram
+# Loading work.Histo
+# Loading work.SRAM
+# ** Error: (vsim-3033) C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v(88): Instantiation of 'altsyncram' failed. The design unit was not found.
+# 
+#         Region: /testbench_Histogram/coolName2/HisRam
+#         Searched libraries:
+#             C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/rtl_work
+# ** Error: (vsim-3033) C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v(88): Instantiation of 'altsyncram' failed. The design unit was not found.
+# 
+#         Region: /testbench_Histogram/coolName2/DispRam
+#         Searched libraries:
+#             C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/rtl_work
+# ** Error: (vsim-3033) C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v(88): Instantiation of 'altsyncram' failed. The design unit was not found.
+# 
+#         Region: /testbench_Histogram/coolName2/HDispRam
+#         Searched libraries:
+#             C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/rtl_work
+# Error loading design
+vsim -L altera_mf_ver work.testbench_Histogram
+# vsim -L altera_mf_ver work.testbench_Histogram 
+# Loading work.testbench_Histogram
+# Loading work.Histo
+# Loading work.SRAM
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3017) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [TFMPC] - Too few port connections. Expected 9, found 8.
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'iY_cont'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(16).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'iX_cont'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(17).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (8 or 8) does not match connection size (1) for port 'Gr_Out_His'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(21).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (8 or 8) does not match connection size (1) for port 'Gr_Out_Cum'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(22).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3722) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [TFMPC] - Missing connection for port 'stateOut'.
+# 
+vsim work.testbench_Histogram
+# vsim work.testbench_Histogram 
+# Loading work.testbench_Histogram
+# Loading work.Histo
+# Loading work.SRAM
+# ** Error: (vsim-3033) C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v(88): Instantiation of 'altsyncram' failed. The design unit was not found.
+# 
+#         Region: /testbench_Histogram/coolName2/HisRam
+#         Searched libraries:
+#             C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/rtl_work
+# ** Error: (vsim-3033) C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v(88): Instantiation of 'altsyncram' failed. The design unit was not found.
+# 
+#         Region: /testbench_Histogram/coolName2/DispRam
+#         Searched libraries:
+#             C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/rtl_work
+# ** Error: (vsim-3033) C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v(88): Instantiation of 'altsyncram' failed. The design unit was not found.
+# 
+#         Region: /testbench_Histogram/coolName2/HDispRam
+#         Searched libraries:
+#             C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/rtl_work
+# Error loading design
+vsim -L altera_mf_ver work.testbench_Histogram
+# vsim -L altera_mf_ver work.testbench_Histogram 
+# Loading work.testbench_Histogram
+# Loading work.Histo
+# Loading work.SRAM
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3017) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [TFMPC] - Too few port connections. Expected 9, found 8.
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'iY_cont'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(16).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'iX_cont'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(17).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (8 or 8) does not match connection size (1) for port 'Gr_Out_His'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(21).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (8 or 8) does not match connection size (1) for port 'Gr_Out_Cum'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(22).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3722) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [TFMPC] - Missing connection for port 'stateOut'.
+# 
+add wave -position end  sim:/testbench_Histogram/hist_input
+run 1000ms
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: testbench_Histogram.coolName2.HisRam.altsyncram_component
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: testbench_Histogram.coolName2.DispRam.altsyncram_component
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: testbench_Histogram.coolName2.HDispRam.altsyncram_component
+# Break key hit 
+# Break in VlGenerateBlock clk0_on_outb_fall_gen at C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_mf.v line 47183
+add wave -position end  sim:/testbench_Histogram/coolName2/iPclk
+add wave -position end  sim:/testbench_Histogram/coolName2/HDispRam/altsyncram_component/mem_data[0]
+# Load canceled
+run 1000ns
+# WARNING: No extended dataflow license exists
+add wave -position end  sim:/testbench_Histogram/coolName2/stateOut
+run 1000ns
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[0]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[1]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[2]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[3]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[4]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[5]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[6]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[7]
+run 10us
+add wave -position end  sim:/testbench_Histogram/coolName2/Fval
+run 10us
+run 1ms
+add wave -position end  sim:/testbench_Histogram/rCCD_FVAL
+run 1ms
+run 1ms
+run 1ms

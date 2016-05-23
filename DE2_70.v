@@ -538,10 +538,10 @@ wire [7:0] Gr_Out_Cum_D;
 
 Histo H0(
 	CCD_PIXCLK,
-	Y_cont,
-	X_cont,
+	Y_Cont,
+	X_Cont,
 	sCCD_DVAL,
-	sCCD_DVAL,
+	rCCD_FVAL,
 sCCD_R[11:4],
 Gr_Out_His_D,
 Gr_Out_Cum_D,
@@ -549,9 +549,11 @@ oLEDR[1:0]
 );
 
 assign oLEDR[9:2] = Gr_Out_His_D;
+assign oLEDR[10] = rCCD_FVAL;
+assign oLEDR[11] = ~oLEDR[1]&~oLEDR[0];
 
-wire [15:0] wr1_data = iSW[1]? ({Gr_Out_His_D[7:4],Gr_Out_His_D}): {sCCD_G[11:7],	 sCCD_B[11:2]};
-wire [15:0] wr2_data = iSW[1]? ({Gr_Out_His_D[3:0],Gr_Out_His_D}): {sCCD_G[6:2],    sCCD_R[11:2]};
+wire [15:0] wr1_data = iSW[1]? ({Gr_Out_Cum_D[7:4],Gr_Out_Cum_D}): {sCCD_G[11:7],	 sCCD_B[11:2]};
+wire [15:0] wr2_data = iSW[1]? ({Gr_Out_Cum_D[3:0],Gr_Out_Cum_D}): {sCCD_G[6:2],    sCCD_R[11:2]};
 
 // LK: The SDRAM is used as a frame buffer using two of these Sdram_Control_4Port modules -  one for each SDRAM chip on the DE2-70 board.
 //     Camera data is loaded into the FIFO Write Side 1 and read out by the LCD display driver.
