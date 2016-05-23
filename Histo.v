@@ -108,16 +108,15 @@ always@ (posedge iPclk) begin
 	
 	
 end
-
 assign SRAM_R_Addr_In[11:0] =				state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/ {4'b0000,Grey}: /*2*/0);
 assign SRAM_D_In[19:0] = 					state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/holding : /*2*/0);
 assign SRAM_W_Addr_In[11:0] = 			state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/AddrHolding: /*2*/0);
 assign SRAM_Wen = 							state[0]?(state[1]? /*1*/0 : /*3*/1) :(state[1]? /*0*/ 1: /*2*/0);
 
-assign DISP_SRAM_R_Addr_In[11:0] = 		state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/ {4'b0000,Grey}: /*2*/0);
-assign DISP_SRAM_D_In[19:0] = 			state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/holding : /*2*/0);
-assign DISP_SRAM_W_Addr_In[11:0] = 		state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/AddrHolding: /*2*/0);
-assign DISP_SRAM_Wen = 						state[0]?(state[1]? /*1*/1 : /*3*/1) :(state[1]? /*0*/ 1: /*2*/0);
+assign DISP_SRAM_R_Addr_In[11:0] = 		state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/0: /*2*/0);
+assign DISP_SRAM_D_In[19:0] = 			state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/0 : /*2*/0);
+assign DISP_SRAM_W_Addr_In[11:0] = 		state[0]?(state[1]? /*1*/PixCount : /*3*/0) :(state[1]? /*0*/0: /*2*/0);
+assign DISP_SRAM_Wen = 						state[0]?(state[1]? /*1*/1 : /*3*/0) :(state[1]? /*0*/0: /*2*/0);
 
 
 assign CUM_SRAM_R_Addr_In[11:0] = 		state[0]?(state[1]? /*1*/0 : /*3*/0) :(state[1]? /*0*/ {4'b0000,Grey}: /*2*/0);
