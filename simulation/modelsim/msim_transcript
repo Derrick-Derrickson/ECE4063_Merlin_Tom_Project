@@ -10,46 +10,25 @@
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/tjmer2.MONASH/GIT/ECE4063/Test\ Bench {C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench {C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module testbench_Histogram
 # 
 # Top level modules:
 # 	testbench_Histogram
-# vlog -vlog01compat -work work +incdir+C:/Users/tjmer2.MONASH/GIT/ECE4063 {C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project {C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module Histo
 # 
 # Top level modules:
 # 	Histo
-# vlog -vlog01compat -work work +incdir+C:/Users/tjmer2.MONASH/GIT/ECE4063 {C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project {C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/SRAM.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module SRAM
 # 
 # Top level modules:
 # 	SRAM
 # 
-vsim work.testbench_Histogram
-# vsim work.testbench_Histogram 
-# Loading work.testbench_Histogram
-# Loading work.Histo
-# Loading work.SRAM
-# ** Error: (vsim-3033) C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v(88): Instantiation of 'altsyncram' failed. The design unit was not found.
-# 
-#         Region: /testbench_Histogram/coolName2/HisRam
-#         Searched libraries:
-#             C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/rtl_work
-# ** Error: (vsim-3033) C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v(88): Instantiation of 'altsyncram' failed. The design unit was not found.
-# 
-#         Region: /testbench_Histogram/coolName2/DispRam
-#         Searched libraries:
-#             C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/rtl_work
-# ** Error: (vsim-3033) C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v(88): Instantiation of 'altsyncram' failed. The design unit was not found.
-# 
-#         Region: /testbench_Histogram/coolName2/HDispRam
-#         Searched libraries:
-#             C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/rtl_work
-# Error loading design
 vsim -L altera_mf_ver work.testbench_Histogram
 # vsim -L altera_mf_ver work.testbench_Histogram 
 # Loading work.testbench_Histogram
@@ -58,99 +37,255 @@ vsim -L altera_mf_ver work.testbench_Histogram
 # Loading altera_mf_ver.altsyncram
 # Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
 # Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3017) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [TFMPC] - Too few port connections. Expected 9, found 8.
+# ** Warning: (vsim-3017) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [TFMPC] - Too few port connections. Expected 11, found 10.
 # 
 #         Region: /testbench_Histogram/coolName2
-# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'iY_cont'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(16).
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (5) for port 'iY_Cont'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(15).
 # 
 #         Region: /testbench_Histogram/coolName2
-# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'iX_cont'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(17).
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (5) for port 'iX_Cont'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(15).
 # 
 #         Region: /testbench_Histogram/coolName2
-# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (8 or 8) does not match connection size (1) for port 'Gr_Out_His'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(21).
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'Gr_Out_His1'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(18).
 # 
 #         Region: /testbench_Histogram/coolName2
-# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (8 or 8) does not match connection size (1) for port 'Gr_Out_Cum'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(22).
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'Gr_Out_His2'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(18).
 # 
 #         Region: /testbench_Histogram/coolName2
-# ** Warning: (vsim-3722) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [TFMPC] - Missing connection for port 'stateOut'.
-# 
-vsim work.testbench_Histogram
-# vsim work.testbench_Histogram 
-# Loading work.testbench_Histogram
-# Loading work.Histo
-# Loading work.SRAM
-# ** Error: (vsim-3033) C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v(88): Instantiation of 'altsyncram' failed. The design unit was not found.
-# 
-#         Region: /testbench_Histogram/coolName2/HisRam
-#         Searched libraries:
-#             C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/rtl_work
-# ** Error: (vsim-3033) C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v(88): Instantiation of 'altsyncram' failed. The design unit was not found.
-# 
-#         Region: /testbench_Histogram/coolName2/DispRam
-#         Searched libraries:
-#             C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/rtl_work
-# ** Error: (vsim-3033) C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v(88): Instantiation of 'altsyncram' failed. The design unit was not found.
-# 
-#         Region: /testbench_Histogram/coolName2/HDispRam
-#         Searched libraries:
-#             C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/rtl_work
-# Error loading design
-vsim -L altera_mf_ver work.testbench_Histogram
-# vsim -L altera_mf_ver work.testbench_Histogram 
-# Loading work.testbench_Histogram
-# Loading work.Histo
-# Loading work.SRAM
-# Loading altera_mf_ver.altsyncram
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# ** Warning: (vsim-3017) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [TFMPC] - Too few port connections. Expected 9, found 8.
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'Gr_Out_Cum1'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(18).
 # 
 #         Region: /testbench_Histogram/coolName2
-# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'iY_cont'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(16).
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'Gr_Out_Cum2'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(18).
 # 
 #         Region: /testbench_Histogram/coolName2
-# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'iX_cont'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(17).
+# ** Warning: (vsim-3722) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [TFMPC] - Missing connection for port 'stateOut'.
 # 
-#         Region: /testbench_Histogram/coolName2
-# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (8 or 8) does not match connection size (1) for port 'Gr_Out_His'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(21).
-# 
-#         Region: /testbench_Histogram/coolName2
-# ** Warning: (vsim-3015) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [PCDPC] - Port size (8 or 8) does not match connection size (1) for port 'Gr_Out_Cum'. The port definition is at: C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v(22).
-# 
-#         Region: /testbench_Histogram/coolName2
-# ** Warning: (vsim-3722) C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v(65): [TFMPC] - Missing connection for port 'stateOut'.
-# 
-add wave -position end  sim:/testbench_Histogram/hist_input
-run 1000ms
+add wave -position end  sim:/testbench_Histogram/coolName2/DISP_SRAM_Q_Out
+add wave -position end  sim:/testbench_Histogram/coolName2/Fval
+add wave -position end  sim:/testbench_Histogram/coolName2/Dval
+add wave -position 0  sim:/testbench_Histogram/coolName2/Grey
+add wave -position end  sim:/testbench_Histogram/coolName2/addrHolding
+add wave -position end  sim:/testbench_Histogram/coolName2/holding
+add wave -position end  sim:/testbench_Histogram/coolName2/state
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data
+run 100000ns
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: testbench_Histogram.coolName2.HisRam.altsyncram_component
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: testbench_Histogram.coolName2.DispRam.altsyncram_component
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: testbench_Histogram.coolName2.HDispRam.altsyncram_component
-# Break key hit 
-# Break in VlGenerateBlock clk0_on_outb_fall_gen at C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_mf.v line 47183
-add wave -position end  sim:/testbench_Histogram/coolName2/iPclk
-add wave -position end  sim:/testbench_Histogram/coolName2/HDispRam/altsyncram_component/mem_data[0]
-# Load canceled
-run 1000ns
-# WARNING: No extended dataflow license exists
-add wave -position end  sim:/testbench_Histogram/coolName2/stateOut
-run 1000ns
-add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[0]
-add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[1]
-add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[2]
-add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[3]
-add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[4]
-add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[5]
-add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[6]
-add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[7]
-run 10us
-add wave -position end  sim:/testbench_Histogram/coolName2/Fval
-run 10us
-run 1ms
+add wave -position 4  sim:/testbench_Histogram/coolName2/SRAM_Q_Out
+run 200000ns
+add wave -position end  sim:/testbench_Histogram/coolName2/SRAM_Q_Out
 add wave -position end  sim:/testbench_Histogram/rCCD_FVAL
-run 1ms
-run 1ms
-run 1ms
+add wave -position end  sim:/testbench_Histogram/sCCD_DVAL
+add wave -position end  sim:/testbench_Histogram/coolName2/holding
+add wave -position end  sim:/testbench_Histogram/coolName2/addrHolding
+add wave -position end  sim:/testbench_Histogram/coolName2/state
+add wave -position end  sim:/testbench_Histogram/coolName2/Grey
+restart
+# ** Warning: (vsim-3017) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [TFMPC] - Too few port connections. Expected 11, found 10.
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (5) for port 'iY_Cont'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(15).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (5) for port 'iX_Cont'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(15).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'Gr_Out_His1'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(18).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'Gr_Out_His2'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(18).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'Gr_Out_Cum1'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(18).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'Gr_Out_Cum2'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(18).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3722) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [TFMPC] - Missing connection for port 'stateOut'.
+# 
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[100]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[101]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[102]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[103]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[104]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[105]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[106]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[107]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[108]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[109]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[110]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[111]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[112]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[113]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[114]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[115]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[116]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[117]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[118]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[119]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[120]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[121]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[122]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[123]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[124]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[125]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[126]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[127]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[128]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[129]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[130]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[131]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[132]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[133]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[134]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[135]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[136]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[137]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[138]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[139]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[140]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[141]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[142]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[143]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[144]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[145]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[146]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[147]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[148]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[149]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[150]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[151]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[152]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[153]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[154]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[155]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[156]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[157]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[158]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[159]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[160]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[161]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[162]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[163]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[164]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[165]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[166]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[167]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[168]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[169]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[170]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[171]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[172]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[173]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[174]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[175]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[176]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[177]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[178]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[179]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[180]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[181]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[182]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[183]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[184]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[185]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[186]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[187]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[188]
+add wave -position end  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[189]
+run 100000ns
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: testbench_Histogram.coolName2.HisRam.altsyncram_component
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: testbench_Histogram.coolName2.DispRam.altsyncram_component
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: testbench_Histogram.coolName2.HDispRam.altsyncram_component
+# WARNING: No extended dataflow license exists
+restart
+# ** Warning: (vsim-3017) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [TFMPC] - Too few port connections. Expected 11, found 10.
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (5) for port 'iY_Cont'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(15).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (5) for port 'iX_Cont'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(15).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'Gr_Out_His1'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(18).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'Gr_Out_His2'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(18).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'Gr_Out_Cum1'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(18).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3015) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [PCDPC] - Port size (16 or 16) does not match connection size (1) for port 'Gr_Out_Cum2'. The port definition is at: C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v(18).
+# 
+#         Region: /testbench_Histogram/coolName2
+# ** Warning: (vsim-3722) C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v(73): [TFMPC] - Missing connection for port 'stateOut'.
+# 
+add wave -position 7  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[50]
+add wave -position 8  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[51]
+add wave -position 9  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[52]
+add wave -position 10  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[53]
+add wave -position 11  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[54]
+add wave -position 12  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[55]
+add wave -position 13  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[56]
+add wave -position 14  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[57]
+add wave -position 15  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[58]
+add wave -position 16  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[59]
+add wave -position 17  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[60]
+add wave -position 18  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[61]
+add wave -position 19  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[62]
+add wave -position 20  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[63]
+add wave -position 21  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[64]
+add wave -position 22  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[65]
+add wave -position 23  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[66]
+add wave -position 24  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[67]
+add wave -position 25  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[68]
+add wave -position 26  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[69]
+add wave -position 27  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[70]
+add wave -position 28  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[71]
+add wave -position 29  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[72]
+add wave -position 30  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[73]
+add wave -position 31  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[74]
+add wave -position 32  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[75]
+add wave -position 33  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[76]
+add wave -position 34  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[77]
+add wave -position 35  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[78]
+add wave -position 36  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[79]
+add wave -position 37  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[80]
+add wave -position 38  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[81]
+add wave -position 39  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[82]
+add wave -position 40  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[83]
+add wave -position 41  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[84]
+add wave -position 42  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[85]
+add wave -position 43  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[86]
+add wave -position 44  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[87]
+add wave -position 45  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[88]
+add wave -position 46  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[89]
+add wave -position 47  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[90]
+add wave -position 48  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[91]
+add wave -position 49  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[92]
+add wave -position 50  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[93]
+add wave -position 51  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[94]
+add wave -position 52  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[95]
+add wave -position 53  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[96]
+add wave -position 54  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[97]
+add wave -position 55  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[98]
+add wave -position 56  sim:/testbench_Histogram/coolName2/HisRam/altsyncram_component/mem_data[99]
+run 100000ns
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: testbench_Histogram.coolName2.HisRam.altsyncram_component
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: testbench_Histogram.coolName2.DispRam.altsyncram_component
+# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
+# Time: 0  Instance: testbench_Histogram.coolName2.HDispRam.altsyncram_component
+run 100000ns

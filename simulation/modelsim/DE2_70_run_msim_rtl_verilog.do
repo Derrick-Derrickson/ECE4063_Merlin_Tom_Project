@@ -5,7 +5,7 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+C:/Users/tjmer2.MONASH/GIT/ECE4063/Test\ Bench {C:/Users/tjmer2.MONASH/GIT/ECE4063/Test Bench/testbench_Histogram.v}
-vlog -vlog01compat -work work +incdir+C:/Users/tjmer2.MONASH/GIT/ECE4063 {C:/Users/tjmer2.MONASH/GIT/ECE4063/Histo.v}
-vlog -vlog01compat -work work +incdir+C:/Users/tjmer2.MONASH/GIT/ECE4063 {C:/Users/tjmer2.MONASH/GIT/ECE4063/SRAM.v}
+vlog -vlog01compat -work work +incdir+C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench {C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Testbench/testbench_Histogram.v}
+vlog -vlog01compat -work work +incdir+C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project {C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/Histo.v}
+vlog -vlog01compat -work work +incdir+C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project {C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/SRAM.v}
 

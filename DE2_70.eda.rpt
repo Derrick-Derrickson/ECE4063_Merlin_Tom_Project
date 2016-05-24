@@ -1,6 +1,6 @@
 EDA Netlist Writer report for DE2_70
-Mon May 23 19:05:22 2016
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+Tue May 24 17:26:40 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon May 23 19:05:22 2016 ;
+; EDA Netlist Writer Status ; Successful - Tue May 24 17:26:40 2016 ;
 ; Revision Name             ; DE2_70                                ;
 ; Top-level Entity Name     ; DE2_70                                ;
 ; Family                    ; Cyclone II                            ;
@@ -66,16 +66,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+--------------------------------------------------------------------------+
-; Simulation Generated Files                                               ;
-+--------------------------------------------------------------------------+
-; Generated Files                                                          ;
-+--------------------------------------------------------------------------+
-; C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/DE2_70.vo         ;
-; C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/DE2_70_fast.vo    ;
-; C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/DE2_70_v.sdo      ;
-; C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/DE2_70_v_fast.sdo ;
-+--------------------------------------------------------------------------+
++----------------------------------------------+
+; Simulation Generated Files                   ;
++----------------------------------------------+
+; Generated Files                              ;
++----------------------------------------------+
+; C:/Git/simulation/modelsim/DE2_70.vo         ;
+; C:/Git/simulation/modelsim/DE2_70_fast.vo    ;
+; C:/Git/simulation/modelsim/DE2_70_v.sdo      ;
+; C:/Git/simulation/modelsim/DE2_70_v_fast.sdo ;
++----------------------------------------------+
 
 
 +-----------------------------+
@@ -83,14 +83,14 @@ applicable agreement for further details.
 +-----------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
-    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Mon May 23 19:05:20 2016
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue May 24 17:26:36 2016
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off DE2_70 -c DE2_70
-Info (204026): Generated files "DE2_70.vo", "DE2_70_fast.vo", "DE2_70_v.sdo" and "DE2_70_v_fast.sdo" in directory "C:/Users/tjmer2.MONASH/GIT/ECE4063/simulation/modelsim/" for EDA simulation tool
+Info (204026): Generated files "DE2_70.vo", "DE2_70_fast.vo", "DE2_70_v.sdo" and "DE2_70_v_fast.sdo" in directory "C:/Git/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 444 megabytes
-    Info: Processing ended: Mon May 23 19:05:22 2016
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 430 megabytes
+    Info: Processing ended: Tue May 24 17:26:40 2016
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

@@ -533,27 +533,40 @@ sdram_pll 			u6	(	.inclk0(iCLK_50_3),
 						);
 
 assign CCD_MCLK = rClk[0];
-wire [7:0] Gr_Out_His_D;
-wire [7:0] Gr_Out_Cum_D;
+wire [15:0] Gr_Out_His_D1, Gr_Out_His_D2;
+wire [15:0] Gr_Out_Cum_D1, Gr_Out_Cum_D2;
+wire 	[11:0] GREY;
+wire	[15:0] grey_data1, grey_data2;
+wire GVAL;
+
+
+Greyscale wine1 (.iclk(CCD_PIXCLK),
+						.ired_input(sCCD_R),.igreen_input(sCCD_G),.iblue_input(sCCD_B),
+						.ix_pos(X_Cont),.iy_pos(Y_Cont),
+						.if_val(rCCD_FVAL),.id_val(sCCD_DVAL),
+						.odata_out1(grey_data1),.odata_out2(grey_data2),
+						.ogrey_checkd1(GREY),.oGVALd(GVAL));
+
+
 
 Histo H0(
-	CCD_PIXCLK,
-	Y_Cont,
-	X_Cont,
-	sCCD_DVAL,
-	rCCD_FVAL,
-sCCD_R[11:4],
-Gr_Out_His_D,
-Gr_Out_Cum_D,
-oLEDR[1:0]
+	.iPclk(CCD_PIXCLK),
+	.iY_Cont(Y_Cont),
+	.iX_Cont(X_Cont),
+	.Dval(GVAL),
+	.Fval(rCCD_FVAL),
+.Grey(GREY),
+.Gr_Out_His1(Gr_Out_His_D1),.Gr_Out_His2(Gr_Out_His_D2),
+.Gr_Out_Cum1(Gr_Out_Cum_D1),.Gr_Out_Cum2(Gr_Out_Cum_D2),
+.stateOut(oLEDR[1:0])
 );
 
-assign oLEDR[9:2] = Gr_Out_His_D;
+
 assign oLEDR[10] = rCCD_FVAL;
 assign oLEDR[11] = ~oLEDR[1]&~oLEDR[0];
 
-wire [15:0] wr1_data = iSW[1]? ({Gr_Out_Cum_D[7:4],Gr_Out_Cum_D}): {sCCD_G[11:7],	 sCCD_B[11:2]};
-wire [15:0] wr2_data = iSW[1]? ({Gr_Out_Cum_D[3:0],Gr_Out_Cum_D}): {sCCD_G[6:2],    sCCD_R[11:2]};
+wire [15:0] wr1_data = iSW[1]?(iSW[2]?Gr_Out_His_D1 : grey_data1): {sCCD_G[11:7],	 sCCD_B[11:2]};
+wire [15:0] wr2_data = iSW[1]?(iSW[2]?Gr_Out_His_D2 : grey_data2): {sCCD_G[6:2],    sCCD_R[11:2]};
 
 // LK: The SDRAM is used as a frame buffer using two of these Sdram_Control_4Port modules -  one for each SDRAM chip on the DE2-70 board.
 //     Camera data is loaded into the FIFO Write Side 1 and read out by the LCD display driver.

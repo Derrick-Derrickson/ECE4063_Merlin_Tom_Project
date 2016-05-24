@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C70F896) Path("C:/Users/tjmer2.MONASH/GIT/ECE4063/") File("DE2_70.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C70F896) Path("C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/") File("DE2_70.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
