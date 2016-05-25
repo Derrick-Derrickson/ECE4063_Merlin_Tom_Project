@@ -26,8 +26,8 @@ module testbench_Histogram;
 	parameter invalidBorderWidthY=((full_frame_rows-num_rows)/2);
 	parameter num_bits_rgb =12;
 	parameter output_width = 16;
-	parameter user_directory = "C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/TestBench/";
-	
+	parameter user_directory = "C:/Users/to300/GIT/ECE4063_Merlin_Tom_Project/TestBench/";
+	//toms path: 
 	// These signals correspond to those that you will need to work
 	// with in the template project
 	reg[num_bits_rgb-1:0] 		sCCD_R, sCCD_G, sCCD_B;

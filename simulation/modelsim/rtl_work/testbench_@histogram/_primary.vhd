@@ -10,7 +10,7 @@ entity testbench_Histogram is
         invalidBorderWidthY: vl_notype;
         num_bits_rgb    : integer := 12;
         output_width    : integer := 16;
-        user_directory  : string  := "C:/Users/mookl1/githole/ECE4063_Merlin_Tom_Project/TestBench/"
+        user_directory  : string  := "C:/Users/to300/GIT/ECE4063_Merlin_Tom_Project/TestBench/"
     );
     attribute mti_svvh_generic_type : integer;
     attribute mti_svvh_generic_type of num_rows : constant is 1;

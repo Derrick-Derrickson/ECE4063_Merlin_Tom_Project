@@ -47,6 +47,13 @@ wire CUM_SRAM_Wen;
 
 reg [19:0] holding;
 reg [11:0] addrHolding;
+reg [11:0] addrHolding2;
+reg [11:0] addrHolding3;
+
+reg DvalHolding;
+reg DvalHolding2;
+reg DvalHolding3;
+
 reg [2:0] state;
 reg [7:0] PixCount;
 reg [19:0] CumVal;
@@ -91,8 +98,11 @@ always@ (posedge iPclk) begin
 		case (state)
 		
 		0: begin
+		PixCount <= PixCount + 1;
+		if(PixCount >= 3) begin
 		state <= 1;
 		PixCount <= 0;
+		end
 		end
 		
 		1:	begin //Clear the Memory
@@ -106,6 +116,7 @@ always@ (posedge iPclk) begin
 			
 				PixCount <= PixCount + 1;
 				CumVal <= SRAM_Q_Out + CumVal;
+				
 				if(PixCount >= 255) begin
 					state <= 3;
 					PixCount <= 0;
@@ -119,10 +130,16 @@ always@ (posedge iPclk) begin
 		default: state <= 3;
 	endcase
 	end
-	
-	
+	addrHolding3 <= addrHolding2;
+	addrHolding2 <= addrHolding;
 	addrHolding <= Grey;
 	holding <= SRAM_Q_Out+1;
+	
+	DvalHolding3 <= DvalHolding2;
+	DvalHolding2 <= DvalHolding;
+	DvalHolding <= Dval;
+	
+	
 	
 	//if (iY_Cont < 255) begin
 		if((DISP_SRAM_Q_Out >= (iX_Cont)) && (iY_Cont < 255) ) begin 
@@ -154,8 +171,8 @@ end
 
 assign SRAM_R_Addr_In[11:0] =				state[0]?(state[1]? /*3*/0 : /*1*/0) 			:(state[1]? /*2*/PixCount : 	/*0*/Grey);
 assign SRAM_D_In[19:0] = 					state[0]?(state[1]? /*3*/0 : /*1*/0) 			:(state[1]? /*2*/	0:			 	/*0*/holding);
-assign SRAM_W_Addr_In[11:0] = 			state[0]?(state[1]? /*3*/PixCount : /*1*/0) 	:(state[1]? /*2*/ 0:		 		/*0*/addrHolding);
-assign SRAM_Wen = 							state[0]?(state[1]? /*3*/1 : /*1*/0) 			:(state[1]? /*2*/ 0:				/*0*/1);
+assign SRAM_W_Addr_In[11:0] = 			state[0]?(state[1]? /*3*/PixCount : /*1*/0) 	:(state[1]? /*2*/ 0:		 		/*0*/addrHolding3);
+assign SRAM_Wen = 							state[0]?(state[1]? /*3*/1 : /*1*/0) 			:(state[1]? /*2*/ 0:				/*0*/DvalHolding3);
 
 assign DISP_SRAM_R_Addr_In[11:0] = 		state[0]?(state[1]? /*3*/0 : /*1*/0) 			:(state[1]? /*2*/0:			 	/*0*/{4'b0000,iY_Cont[7:0]});
 assign DISP_SRAM_D_In[19:0] = 			state[0]?(state[1]? /*3*/0 : /*1*/0) 			:(state[1]? /*2*/SRAM_Q_Out:  /*0*/0);

@@ -555,11 +555,11 @@ Histo H0(
 	.iX_Cont(X_Cont),
 	.Dval(GVAL),
 	.Fval(rCCD_FVAL),
-.Grey(GREY),
-.Gr_Out_His1(Gr_Out_His_D1),.Gr_Out_His2(Gr_Out_His_D2),
-.Gr_Out_Cum1(Gr_Out_Cum_D1),.Gr_Out_Cum2(Gr_Out_Cum_D2),
-.stateOut(oLEDR[1:0])
-);
+	.Grey(GREY),
+	.Gr_Out_His1(Gr_Out_His_D1),.Gr_Out_His2(Gr_Out_His_D2),
+	.Gr_Out_Cum1(Gr_Out_Cum_D1),.Gr_Out_Cum2(Gr_Out_Cum_D2),
+	.stateOut(oLEDR[1:0])
+	);
 
 
 assign oLEDR[10] = rCCD_FVAL;
