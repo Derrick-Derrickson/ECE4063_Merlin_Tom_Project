@@ -1,16 +1,16 @@
-Fitter Status : Successful - Tue May 24 17:26:20 2016
-Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Fitter Status : Successful - Wed May 25 17:31:54 2016
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : DE2_70
 Top-level Entity Name : DE2_70
 Family : Cyclone II
 Device : EP2C70F896C6
 Timing Models : Final
-Total logic elements : 2,869 / 68,416 ( 4 % )
-    Total combinational functions : 2,609 / 68,416 ( 4 % )
-    Dedicated logic registers : 1,344 / 68,416 ( 2 % )
-Total registers : 1414
+Total logic elements : 2,899 / 68,416 ( 4 % )
+    Total combinational functions : 2,617 / 68,416 ( 4 % )
+    Dedicated logic registers : 1,392 / 68,416 ( 2 % )
+Total registers : 1462
 Total pins : 530 / 622 ( 85 % )
 Total virtual pins : 0
-Total memory bits : 160,824 / 1,152,000 ( 14 % )
+Total memory bits : 97,848 / 1,152,000 ( 8 % )
 Embedded Multiplier 9-bit elements : 0 / 300 ( 0 % )
 Total PLLs : 2 / 4 ( 50 % )

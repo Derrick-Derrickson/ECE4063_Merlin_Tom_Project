@@ -434,6 +434,8 @@ wire	[9:0]	oVGA_B;   				//	VGA Blue[9:0]
 reg		[1:0]	rClk;
 wire			sdram_ctrl_clk;
 
+
+wire [7:0] thresh;
 //=============================================================================
 // Structural coding
 //=============================================================================
@@ -558,15 +560,15 @@ Histo H0(
 	.Grey(GREY),
 	.Gr_Out_His1(Gr_Out_His_D1),.Gr_Out_His2(Gr_Out_His_D2),
 	.Gr_Out_Cum1(Gr_Out_Cum_D1),.Gr_Out_Cum2(Gr_Out_Cum_D2),
-	.stateOut(oLEDR[1:0])
-	);
+	.stateOut(oLEDR[1:0]),
+	.threshOut(thresh));
 
 
 assign oLEDR[10] = rCCD_FVAL;
 assign oLEDR[11] = ~oLEDR[1]&~oLEDR[0];
 
-wire [15:0] wr1_data = iSW[1]?(iSW[2]?Gr_Out_His_D1 : grey_data1): {sCCD_G[11:7],	 sCCD_B[11:2]};
-wire [15:0] wr2_data = iSW[1]?(iSW[2]?Gr_Out_His_D2 : grey_data2): {sCCD_G[6:2],    sCCD_R[11:2]};
+wire [15:0] wr1_data = iSW[1]?(iSW[2]?(iSW[3]?Gr_Out_His_D1:Gr_Out_Cum_D1) : grey_data1): {sCCD_G[11:7],	 sCCD_B[11:2]};
+wire [15:0] wr2_data = iSW[1]?(iSW[2]?(iSW[3]?Gr_Out_His_D2:Gr_Out_Cum_D2) : grey_data2): {sCCD_G[6:2],    sCCD_R[11:2]};
 
 // LK: The SDRAM is used as a frame buffer using two of these Sdram_Control_4Port modules -  one for each SDRAM chip on the DE2-70 board.
 //     Camera data is loaded into the FIFO Write Side 1 and read out by the LCD display driver.
@@ -678,8 +680,8 @@ touch_tcon			u10	( .iCLK(ltm_nclk),			// Display clock running @ 33 MHz
 							.oLCD_B(ltm_b),
 							.oHD(ltm_hd),
 							.oVD(ltm_vd),
-							.oDEN(ltm_den)
-							);
+							.oDEN(ltm_den),
+							.threshIn(thresh));
 // LK:  Initialisation of LCD parameters.  Do not change!
 lcd_3wire_config	u11	(	
 							// Host Side

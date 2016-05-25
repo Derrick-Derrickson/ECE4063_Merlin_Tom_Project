@@ -56,7 +56,7 @@ module touch_tcon		(
 						oLCD_R,				// LCD Red color data 
 						oLCD_G,             // LCD Green color data  
 						oLCD_B,             // LCD Blue color data  
-						threshIn);
+						);
 //============================================================================
 // PARAMETER declarations
 //============================================================================
@@ -81,8 +81,6 @@ output  [7:0]	oLCD_B;
 output			oHD;
 output			oVD;
 output			oDEN;
-
-input [7:0] threshIn;
 //=============================================================================
 // REG/WIRE declarations
 //=============================================================================
@@ -120,9 +118,9 @@ assign	display_area = ((x_cnt>(Hsync_Blank-1)&& //>215
 						(y_cnt<(V_LINE - Vertical_Front_Porch))
 						))  ? 1'b1 : 1'b0;
 
-assign	read_red 	= iTestMode ? ((threshIn < iREAD_DATA2[9:2])? 8'b11111111:8'b0) : (display_area ? iREAD_DATA2[9:2] : 8'b0);
-assign	read_green 	= iTestMode ? ((threshIn < iREAD_DATA2[9:2])? 8'b11111111:8'b0) : (display_area ? {iREAD_DATA1[14:10],iREAD_DATA2[14:12]}: 8'b0);
-assign	read_blue 	= iTestMode ? ((threshIn < iREAD_DATA2[9:2])? 8'b11111111:8'b0) : (display_area ? iREAD_DATA1[9:2] : 8'b0);
+assign	read_red 	= iTestMode ? (y_cnt[3]? 8'b0: 8'b11111111) : (display_area ? iREAD_DATA2[9:2] : 8'b0);
+assign	read_green 	= iTestMode ? (y_cnt[3]? 8'b0: 8'b11111111) : (display_area ? {iREAD_DATA1[14:10],iREAD_DATA2[14:12]}: 8'b0);
+assign	read_blue 	= iTestMode ? (y_cnt[3]? 8'b0: 8'b11111111) : (display_area ? iREAD_DATA1[9:2] : 8'b0);
 
 ///////////////////////// x  y counter  and lcd hd generator //////////////////
 always@(posedge iCLK or negedge iRST_n)
