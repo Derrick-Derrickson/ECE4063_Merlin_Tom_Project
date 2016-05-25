@@ -23,7 +23,7 @@ input iPclk, Dval, Fval;
 input [15:0] iY_Cont, iX_Cont;
 input [11:0] Grey;
 
-output [1:0] stateOut;
+output [17:0] stateOut;
 output reg [15:0] Gr_Out_His1, Gr_Out_His2;
 output reg [15:0] Gr_Out_Cum1, Gr_Out_Cum2;
 
@@ -47,8 +47,10 @@ wire [11:0] CUM_SRAM_R_Addr_In;
 wire [19:0] CUM_SRAM_Q_Out;
 wire CUM_SRAM_Wen;
 
+wire [1:0] addVal;
 
-reg [19:0] holding;
+
+	reg [19:0] holding;
 reg [11:0] addrHolding;
 reg [11:0] addrHolding2;
 reg [11:0] addrHolding3;
@@ -62,6 +64,7 @@ reg DvalHolding3;
 reg [2:0] state;
 reg [8:0] PixCount;
 reg [19:0] CumVal;
+reg [19:0] PrevVal;
 
 
 SRAM HisRam(
@@ -95,7 +98,7 @@ always@ (posedge iPclk) begin
 	state <= 0;
 	PixCount <= 0;
 	addrHolding <= {4'b0000,Grey[11:4]};
-	holding = SRAM_Q_Out+20'b00000000000000000001;
+	holding <= SRAM_Q_Out+20'b00000000000000000001;
 	DvalHolding <= Dval;
 	end
 	
@@ -125,7 +128,8 @@ always@ (posedge iPclk) begin
 		2: begin //Copy the DISPLAY HISTOGRAM and CALC the CUM
 			
 				PixCount <= PixCount + 1;
-				CumVal = SRAM_Q_Out[19:0] + CumVal[19:0];
+				CumVal = PrevVal+SRAM_Q_Out;
+				PrevVal = CumVal;
 				holding <= SRAM_Q_Out;
 				addrHolding <= PixCount;
 				
@@ -138,6 +142,7 @@ always@ (posedge iPclk) begin
 					state <= 3;
 					PixCount <= 0;
 					CumVal = 0;
+					PrevVal = 0;
 			
 				end
 			end
@@ -157,7 +162,7 @@ always@ (posedge iPclk) begin
 	
 	
 	//if (iY_Cont < 255) begin
-		if((DISP_SRAM_Q_Out>>9 > ((iX_Cont)))&(iY_Cont< 256)) begin 
+		if((DISP_SRAM_Q_Out>>4 > ((iX_Cont)))&(iY_Cont< 256)) begin 
 		
 		if(iY_Cont[7:0] == redVal) begin
 		Gr_Out_His1 <= 16'b0;
@@ -201,7 +206,7 @@ always@ (posedge iPclk) begin
 end
 
 assign SRAM_R_Addr_In[11:0] =				state[0]?(state[1]? /*3*/0 : /*1*/0) 			:(state[1]? /*2*/PixCount[7:0] : 	/*0*/{4'b0000,Grey[11:4]});
-assign SRAM_D_In[19:0] = 					state[0]?(state[1]? /*3*/0 : /*1*/0) 			:(state[1]? /*2*/	0:			 	/*0*/holding[19:0]);
+assign SRAM_D_In[19:0] = 					state[0]?(state[1]? /*3*/0 : /*1*/0) 			:(state[1]? /*2*/	0:holding[19:0]+addVal		 	/*0*/);
 assign SRAM_W_Addr_In[11:0] = 			state[0]?(state[1]? /*3*/PixCount[7:0] : /*1*/0) 	:(state[1]? /*2*/ 0:		 		/*0*/addrHolding3);
 assign SRAM_Wen = 							state[0]?(state[1]? /*3*/1 : /*1*/0) 			:(state[1]? /*2*/ 0:				/*0*/DvalHolding3);
 
@@ -218,6 +223,8 @@ assign CUM_SRAM_Wen = 						state[0]?(state[1]? /*3*/0 : /*1*/1) 			:(state[1]? 
 
 assign threshOut = redVal;
 
-assign stateOut = state;
+assign addVal =   (addrHolding3=={4'b0000,Grey[11:4]})? ((addrHolding == addrHolding2)?((addrHolding == addrHolding3)?3:2):(addrHolding == addrHolding3)?2:1):((addrHolding == addrHolding2)?((addrHolding == addrHolding3)?2:1):(addrHolding == addrHolding3)?1:0);
+
+assign stateOut = SRAM_Q_Out[19:2];
 
 endmodule

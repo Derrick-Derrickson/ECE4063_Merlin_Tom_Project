@@ -560,12 +560,9 @@ Histo H0(
 	.Grey(GREY),
 	.Gr_Out_His1(Gr_Out_His_D1),.Gr_Out_His2(Gr_Out_His_D2),
 	.Gr_Out_Cum1(Gr_Out_Cum_D1),.Gr_Out_Cum2(Gr_Out_Cum_D2),
-	.stateOut(oLEDR[1:0]),
+	.stateOut(oLEDR[17:0]),
 	.threshOut(thresh));
 
-
-assign oLEDR[10] = rCCD_FVAL;
-assign oLEDR[11] = ~oLEDR[1]&~oLEDR[0];
 
 wire [15:0] wr1_data = iSW[1]?(iSW[2]?(iSW[3]?Gr_Out_His_D1:Gr_Out_Cum_D1) : grey_data1): {sCCD_G[11:7],	 sCCD_B[11:2]};
 wire [15:0] wr2_data = iSW[1]?(iSW[2]?(iSW[3]?Gr_Out_His_D2:Gr_Out_Cum_D2) : grey_data2): {sCCD_G[6:2],    sCCD_R[11:2]};
