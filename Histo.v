@@ -54,12 +54,9 @@ wire [1:0] addVal;
 reg [11:0] addrHolding;
 reg [11:0] addrHolding2;
 reg [11:0] addrHolding3;
-
 reg [11:0] addrHolding4;
 reg [11:0] addrHolding5;
-reg [11:0] addrHolding6;
-reg [11:0] addrHolding7;
-reg [11:0] addrHolding8;
+
 reg [7:0] redVal;
 reg redFound;
 
@@ -158,9 +155,7 @@ always@ (posedge iPclk) begin
 		default: state <= 0;
 	endcase
 	end
-	addrHolding8 <= addrHolding7;
-	addrHolding7 <= addrHolding6;
-	addrHolding6 <= addrHolding5;
+
 	addrHolding5 <= addrHolding4;
 	addrHolding4 <= addrHolding3;
 	addrHolding3 <= addrHolding2;
