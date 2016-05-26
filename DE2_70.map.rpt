@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_70
-Thu May 26 19:18:13 2016
+Thu May 26 20:48:28 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -206,12 +206,13 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
 198. Port Connectivity Checks: "Histo:H0|SRAM:HDispRam"
 199. Port Connectivity Checks: "Histo:H0|SRAM:DispRam"
 200. Port Connectivity Checks: "Histo:H0|SRAM:HisRam"
-201. Port Connectivity Checks: "Greyscale:wine1"
-202. Port Connectivity Checks: "vga_pll:u5"
-203. Port Connectivity Checks: "RAW2RGB:u3|Line_Buffer:L1"
-204. Elapsed Time Per Partition
-205. Analysis & Synthesis Messages
-206. Analysis & Synthesis Suppressed Messages
+201. Port Connectivity Checks: "Histo:H0"
+202. Port Connectivity Checks: "Greyscale:wine1"
+203. Port Connectivity Checks: "vga_pll:u5"
+204. Port Connectivity Checks: "RAW2RGB:u3|Line_Buffer:L1"
+205. Elapsed Time Per Partition
+206. Analysis & Synthesis Messages
+207. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -237,13 +238,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu May 26 19:18:13 2016            ;
+; Analysis & Synthesis Status        ; Successful - Thu May 26 20:48:28 2016            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; DE2_70                                           ;
 ; Top-level Entity Name              ; DE2_70                                           ;
 ; Family                             ; Cyclone II                                       ;
-; Total logic elements               ; 3,139                                            ;
-;     Total combinational functions  ; 2,655                                            ;
+; Total logic elements               ; 3,159                                            ;
+;     Total combinational functions  ; 2,675                                            ;
 ;     Dedicated logic registers      ; 1,450                                            ;
 ; Total registers                    ; 1450                                             ;
 ; Total pins                         ; 530                                              ;
@@ -470,16 +471,16 @@ applicable agreement for further details.
 +---------------------------------------------+--------------------------------------------+
 ; Resource                                    ; Usage                                      ;
 +---------------------------------------------+--------------------------------------------+
-; Estimated Total logic elements              ; 3,139                                      ;
+; Estimated Total logic elements              ; 3,159                                      ;
 ;                                             ;                                            ;
-; Total combinational functions               ; 2655                                       ;
+; Total combinational functions               ; 2675                                       ;
 ; Logic element usage by number of LUT inputs ;                                            ;
-;     -- 4 input functions                    ; 1090                                       ;
+;     -- 4 input functions                    ; 1118                                       ;
 ;     -- 3 input functions                    ; 738                                        ;
-;     -- <=2 input functions                  ; 827                                        ;
+;     -- <=2 input functions                  ; 819                                        ;
 ;                                             ;                                            ;
 ; Logic elements by mode                      ;                                            ;
-;     -- normal mode                          ; 1915                                       ;
+;     -- normal mode                          ; 1935                                       ;
 ;     -- arithmetic mode                      ; 740                                        ;
 ;                                             ;                                            ;
 ; Total registers                             ; 1450                                       ;
@@ -494,7 +495,7 @@ applicable agreement for further details.
 ;                                             ;                                            ;
 ; Maximum fan-out node                        ; sdram_pll:u6|altpll:altpll_component|_clk0 ;
 ; Maximum fan-out                             ; 759                                        ;
-; Total fan-out                               ; 16188                                      ;
+; Total fan-out                               ; 16284                                      ;
 ; Average fan-out                             ; 3.37                                       ;
 +---------------------------------------------+--------------------------------------------+
 
@@ -504,7 +505,7 @@ applicable agreement for further details.
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                            ; Library Name ;
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2_70                                           ; 2655 (48)         ; 1450 (15)    ; 97848       ; 0            ; 0       ; 0         ; 530  ; 0            ; |DE2_70                                                                                                                                                        ; work         ;
+; |DE2_70                                           ; 2675 (67)         ; 1450 (15)    ; 97848       ; 0            ; 0       ; 0         ; 530  ; 0            ; |DE2_70                                                                                                                                                        ; work         ;
 ;    |CCD_Capture:u2|                               ; 86 (86)           ; 80 (80)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_70|CCD_Capture:u2                                                                                                                                         ; work         ;
 ;    |Greyscale:wine1|                              ; 668 (57)          ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_70|Greyscale:wine1                                                                                                                                        ; work         ;
 ;       |lpm_divide:Div0|                           ; 404 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_70|Greyscale:wine1|lpm_divide:Div0                                                                                                                        ; work         ;
@@ -545,7 +546,7 @@ applicable agreement for further details.
 ;       |SRAM:HisRam|                               ; 0 (0)             ; 0 (0)        ; 10240       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_70|Histo:H0|SRAM:HisRam                                                                                                                                   ; work         ;
 ;          |altsyncram:altsyncram_component|        ; 0 (0)             ; 0 (0)        ; 10240       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_70|Histo:H0|SRAM:HisRam|altsyncram:altsyncram_component                                                                                                   ; work         ;
 ;             |altsyncram_uio1:auto_generated|      ; 0 (0)             ; 0 (0)        ; 10240       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_70|Histo:H0|SRAM:HisRam|altsyncram:altsyncram_component|altsyncram_uio1:auto_generated                                                                    ; work         ;
-;    |I2C_CCD_Config:u9|                            ; 228 (160)         ; 133 (95)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_70|I2C_CCD_Config:u9                                                                                                                                      ; work         ;
+;    |I2C_CCD_Config:u9|                            ; 229 (161)         ; 133 (95)     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_70|I2C_CCD_Config:u9                                                                                                                                      ; work         ;
 ;       |I2C_Controller:u0|                         ; 68 (68)           ; 38 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_70|I2C_CCD_Config:u9|I2C_Controller:u0                                                                                                                    ; work         ;
 ;    |RAW2RGB:u3|                                   ; 222 (207)         ; 120 (110)    ; 28728       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_70|RAW2RGB:u3                                                                                                                                             ; work         ;
 ;       |Line_Buffer:L1|                            ; 15 (0)            ; 10 (0)       ; 28728       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_70|RAW2RGB:u3|Line_Buffer:L1                                                                                                                              ; work         ;
@@ -1226,49 +1227,49 @@ Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
-; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |DE2_70|Histo:H0|holding[2]                                         ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|command:command1|SA[7]               ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|command:command1|SA[8]               ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|control_interface:control1|timer[12] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|control_interface:control1|timer[1]  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|command:command1|command_done        ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|command:command1|command_delay[6]    ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|touch_tcon:u10|oLCD_G[4]                                    ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_70|lcd_3wire_config:u11|I2S_Controller:u0|mST[2]               ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|mADDR[19]                            ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|mADDR[14]                            ;
-; 4:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|I2C_CCD_Config:u9|senosr_exposure[7]                        ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_70|CCD_Capture:u2|X_Cont[10]                                   ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_70|CCD_Capture:u2|Y_Cont[13]                                   ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|rRD1_ADDR[15]                        ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|rWR1_ADDR[11]                        ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|rRD1_ADDR[18]                        ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|rWR1_ADDR[12]                        ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|command:command1|rp_shift[2]         ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|command:command1|rp_shift[0]         ;
-; 64:1               ; 14 bits   ; 588 LEs       ; 252 LEs              ; 336 LEs                ; Yes        ; |DE2_70|I2C_CCD_Config:u9|mI2C_DATA[6]                              ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|CMD[0]                               ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|CMD[1]                               ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; Yes        ; |DE2_70|Histo:H0|redVal[3]                                          ;
-; 7:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|ST[2]                                ;
-; 7:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|ST[8]                                ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; Yes        ; |DE2_70|Histo:H0|state[2]                                           ;
-; 8:1                ; 9 bits    ; 45 LEs        ; 9 LEs                ; 36 LEs                 ; Yes        ; |DE2_70|Histo:H0|PixCount[4]                                        ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |DE2_70|I2C_CCD_Config:u9|I2C_Controller:u0|SD_COUNTER[5]           ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |DE2_70|I2C_CCD_Config:u9|senosr_exposure[8]                        ;
-; 10:1               ; 12 bits   ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; Yes        ; |DE2_70|RAW2RGB:u3|rRed[9]                                          ;
-; 10:1               ; 12 bits   ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; Yes        ; |DE2_70|RAW2RGB:u3|rBlue[6]                                         ;
-; 10:1               ; 12 bits   ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; Yes        ; |DE2_70|RAW2RGB:u3|rGreen[3]                                        ;
-; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; No         ; |DE2_70|Histo:H0|CUM_SRAM_D_In[14]                                  ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; No         ; |DE2_70|Histo:H0|CUM_SRAM_R_Addr_In[7]                              ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |DE2_70|Histo:H0|SRAM_R_Addr_In[4]                                  ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |DE2_70|wr2_data[0]                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
+; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |DE2_70|Histo:H0|holding[7]                                        ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|command:command1|SA[0]              ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|command:command1|SA[9]              ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|control_interface:control1|timer[7] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|control_interface:control1|timer[3] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|command:command1|command_delay[1]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|command:command1|command_delay[5]   ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|touch_tcon:u10|oLCD_R[6]                                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE2_70|lcd_3wire_config:u11|I2S_Controller:u0|mST[0]              ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|mADDR[21]                           ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|mADDR[21]                           ;
+; 4:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; Yes        ; |DE2_70|I2C_CCD_Config:u9|senosr_exposure[9]                       ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_70|CCD_Capture:u2|X_Cont[6]                                   ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2_70|CCD_Capture:u2|Y_Cont[12]                                  ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|rRD1_ADDR[11]                       ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|rWR1_ADDR[20]                       ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|rRD1_ADDR[10]                       ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|rWR1_ADDR[18]                       ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|command:command1|rp_shift[1]        ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|command:command1|rp_shift[1]        ;
+; 64:1               ; 14 bits   ; 588 LEs       ; 252 LEs              ; 336 LEs                ; Yes        ; |DE2_70|I2C_CCD_Config:u9|mI2C_DATA[7]                             ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|CMD[1]                              ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|CMD[1]                              ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; Yes        ; |DE2_70|Histo:H0|redVal[0]                                         ;
+; 7:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u7|ST[1]                               ;
+; 7:1                ; 10 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |DE2_70|Sdram_Control_4Port:u8|ST[1]                               ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; Yes        ; |DE2_70|Histo:H0|state[1]                                          ;
+; 8:1                ; 9 bits    ; 45 LEs        ; 9 LEs                ; 36 LEs                 ; Yes        ; |DE2_70|Histo:H0|PixCount[6]                                       ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |DE2_70|I2C_CCD_Config:u9|I2C_Controller:u0|SD_COUNTER[0]          ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |DE2_70|I2C_CCD_Config:u9|senosr_exposure[8]                       ;
+; 10:1               ; 12 bits   ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; Yes        ; |DE2_70|RAW2RGB:u3|rRed[8]                                         ;
+; 10:1               ; 12 bits   ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; Yes        ; |DE2_70|RAW2RGB:u3|rBlue[10]                                       ;
+; 10:1               ; 12 bits   ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; Yes        ; |DE2_70|RAW2RGB:u3|rGreen[4]                                       ;
+; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; No         ; |DE2_70|Histo:H0|DISP_SRAM_D_In[16]                                ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; No         ; |DE2_70|Histo:H0|SRAM_D_In[0]                                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |DE2_70|Histo:H0|SRAM_R_Addr_In[1]                                 ;
+; 4:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |DE2_70|wr2_data[10]                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4477,6 +4478,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+-------+----------+--------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Histo:H0"                                                                                                                                          ;
++-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                      ;
++-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; threshState ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Greyscale:wine1"                                                                                                                                                                    ;
 +--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4510,7 +4520,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -4520,7 +4530,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Thu May 26 19:18:04 2016
+    Info: Processing started: Thu May 26 20:48:19 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2_70 -c DE2_70
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file testbench/testbench_histogram.v
@@ -4551,14 +4561,14 @@ Warning (12125): Using design file de2_70.v, which is not specified as a design 
     Info (12023): Found entity 1: DE2_70
 Info (12127): Elaborating entity "DE2_70" for the top level hierarchy
 Warning (10858): Verilog HDL warning at de2_70.v(412): object VGA_CTRL_CLK used but never assigned
-Warning (10036): Verilog HDL or VHDL warning at de2_70.v(744): object "adc_penirq_n" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at de2_70.v(745): object "adc_busy" assigned a value but never read
-Warning (10858): Verilog HDL warning at de2_70.v(746): object adc_din used but never assigned
-Warning (10036): Verilog HDL or VHDL warning at de2_70.v(747): object "adc_dout" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at de2_70.v(463): truncated value with size 16 to match size of target (9)
-Warning (10230): Verilog HDL assignment warning at de2_70.v(468): truncated value with size 32 to match size of target (2)
+Warning (10036): Verilog HDL or VHDL warning at de2_70.v(751): object "adc_penirq_n" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at de2_70.v(752): object "adc_busy" assigned a value but never read
+Warning (10858): Verilog HDL warning at de2_70.v(753): object adc_din used but never assigned
+Warning (10036): Verilog HDL or VHDL warning at de2_70.v(754): object "adc_dout" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at de2_70.v(464): truncated value with size 16 to match size of target (9)
+Warning (10230): Verilog HDL assignment warning at de2_70.v(469): truncated value with size 32 to match size of target (2)
 Warning (10030): Net "VGA_CTRL_CLK" at de2_70.v(412) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "adc_din" at de2_70.v(746) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "adc_din" at de2_70.v(753) has no driver or initial value, using a default initial value '0'
 Warning (10034): Output port "oDRAM0_A[12]" at de2_70.v(266) has no driver
 Warning (10034): Output port "oDRAM1_A[12]" at de2_70.v(267) has no driver
 Warning (10034): Output port "oFLASH_A" at de2_70.v(289) has no driver
@@ -4794,24 +4804,24 @@ Info (12133): Instantiated megafunction "sdram_pll:u6|altpll:altpll_component" w
 Info (12128): Elaborating entity "Greyscale" for hierarchy "Greyscale:wine1"
 Warning (10230): Verilog HDL assignment warning at Greyscale.v(34): truncated value with size 32 to match size of target (12)
 Info (12128): Elaborating entity "Histo" for hierarchy "Histo:H0"
-Warning (10230): Verilog HDL assignment warning at Histo.v(104): truncated value with size 32 to match size of target (20)
-Warning (10230): Verilog HDL assignment warning at Histo.v(115): truncated value with size 32 to match size of target (9)
-Warning (10230): Verilog HDL assignment warning at Histo.v(123): truncated value with size 32 to match size of target (9)
-Warning (10230): Verilog HDL assignment warning at Histo.v(133): truncated value with size 32 to match size of target (9)
-Warning (10230): Verilog HDL assignment warning at Histo.v(141): truncated value with size 9 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at Histo.v(153): truncated value with size 32 to match size of target (9)
+Warning (10230): Verilog HDL assignment warning at Histo.v(106): truncated value with size 32 to match size of target (20)
+Warning (10230): Verilog HDL assignment warning at Histo.v(117): truncated value with size 32 to match size of target (9)
+Warning (10230): Verilog HDL assignment warning at Histo.v(125): truncated value with size 32 to match size of target (9)
+Warning (10230): Verilog HDL assignment warning at Histo.v(135): truncated value with size 32 to match size of target (9)
+Warning (10230): Verilog HDL assignment warning at Histo.v(144): truncated value with size 9 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at Histo.v(156): truncated value with size 32 to match size of target (9)
+Warning (10230): Verilog HDL assignment warning at Histo.v(212): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at Histo.v(213): truncated value with size 32 to match size of target (20)
 Warning (10230): Verilog HDL assignment warning at Histo.v(214): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at Histo.v(215): truncated value with size 32 to match size of target (20)
-Warning (10230): Verilog HDL assignment warning at Histo.v(216): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at Histo.v(217): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Histo.v(215): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Histo.v(217): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at Histo.v(218): truncated value with size 32 to match size of target (20)
 Warning (10230): Verilog HDL assignment warning at Histo.v(219): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at Histo.v(220): truncated value with size 32 to match size of target (20)
-Warning (10230): Verilog HDL assignment warning at Histo.v(221): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at Histo.v(222): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Histo.v(220): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Histo.v(223): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at Histo.v(224): truncated value with size 32 to match size of target (20)
 Warning (10230): Verilog HDL assignment warning at Histo.v(225): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at Histo.v(226): truncated value with size 32 to match size of target (20)
-Warning (10230): Verilog HDL assignment warning at Histo.v(227): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at Histo.v(228): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at Histo.v(226): truncated value with size 32 to match size of target (1)
 Info (12128): Elaborating entity "SRAM" for hierarchy "Histo:H0|SRAM:HisRam"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "Histo:H0|SRAM:HisRam|altsyncram:altsyncram_component"
 Info (12130): Elaborated megafunction instantiation "Histo:H0|SRAM:HisRam|altsyncram:altsyncram_component"
@@ -5195,7 +5205,7 @@ Info (12131): Elaborated megafunction instantiation "Greyscale:wine1|lpm_mult:Mu
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_2ch.tdf
     Info (12023): Found entity 1: add_sub_2ch
 Info (12131): Elaborated megafunction instantiation "Greyscale:wine1|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "Greyscale:wine1|lpm_mult:Mult0"
-Warning (12241): 10 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 11 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[2]" and its non-tri-state driver.
     Warning (13035): Inserted always-enabled tri-state buffer between "GPIO_0[3]" and its non-tri-state driver.
@@ -5585,7 +5595,7 @@ Warning (15400): WYSIWYG primitive "Sdram_Control_4Port:u8|Sdram_FIFO:write_fifo
 Warning (15400): WYSIWYG primitive "Sdram_Control_4Port:u8|Sdram_FIFO:write_fifo2|dcfifo:dcfifo_component|dcfifo_m2o1:auto_generated|altsyncram_1l81:fifo_ram|altsyncram_drg1:altsyncram14|ram_block15a13" has a port clk1 that is stuck at GND
 Warning (15400): WYSIWYG primitive "Sdram_Control_4Port:u8|Sdram_FIFO:write_fifo2|dcfifo:dcfifo_component|dcfifo_m2o1:auto_generated|altsyncram_1l81:fifo_ram|altsyncram_drg1:altsyncram14|ram_block15a14" has a port clk1 that is stuck at GND
 Warning (15400): WYSIWYG primitive "Sdram_Control_4Port:u8|Sdram_FIFO:write_fifo2|dcfifo:dcfifo_component|dcfifo_m2o1:auto_generated|altsyncram_1l81:fifo_ram|altsyncram_drg1:altsyncram14|ram_block15a15" has a port clk1 that is stuck at GND
-Warning (21074): Design contains 50 input pin(s) that do not drive logic
+Warning (21074): Design contains 49 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iCLK_28"
     Warning (15610): No output dependent on input pin "iCLK_50_4"
     Warning (15610): No output dependent on input pin "iEXT_CLOCK"
@@ -5600,7 +5610,6 @@ Warning (21074): Design contains 50 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "iSW[12]"
     Warning (15610): No output dependent on input pin "iSW[13]"
     Warning (15610): No output dependent on input pin "iSW[14]"
-    Warning (15610): No output dependent on input pin "iSW[15]"
     Warning (15610): No output dependent on input pin "iSW[16]"
     Warning (15610): No output dependent on input pin "iUART_RTS"
     Warning (15610): No output dependent on input pin "iIRDA_RXD"
@@ -5636,16 +5645,16 @@ Warning (21074): Design contains 50 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "GPIO_CLKIN_N0"
     Warning (15610): No output dependent on input pin "GPIO_CLKIN_P0"
     Warning (15610): No output dependent on input pin "GPIO_CLKIN_P1"
-Info (21057): Implemented 3879 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3898 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 64 input pins
     Info (21059): Implemented 261 output pins
     Info (21060): Implemented 205 bidirectional pins
-    Info (21061): Implemented 3176 logic cells
+    Info (21061): Implemented 3195 logic cells
     Info (21064): Implemented 171 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 652 warnings
-    Info: Peak virtual memory: 546 megabytes
-    Info: Processing ended: Thu May 26 19:18:13 2016
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 651 warnings
+    Info: Peak virtual memory: 541 megabytes
+    Info: Processing ended: Thu May 26 20:48:28 2016
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:09
 

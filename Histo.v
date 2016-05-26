@@ -17,11 +17,13 @@ module Histo(
 					Grey,
 					Gr_Out_His1,Gr_Out_His2,Gr_Out_Cum1,Gr_Out_Cum2,
 					stateOut,
-					threshOut);
+					threshOut,
+					threshState);
 
 input iPclk, Dval, Fval;
 input [15:0] iY_Cont, iX_Cont;
 input [11:0] Grey;
+input [1:0] threshState;
 
 output [17:0] stateOut;
 output reg [15:0] Gr_Out_His1, Gr_Out_His2;
@@ -100,7 +102,7 @@ always@ (posedge iPclk) begin
 	if(Fval) begin
 	state <= 0;
 	PixCount <= 0;
-	addrHolding <= {4'b0000,Grey[11:4]};
+			addrHolding <= {4'b0000,Grey[11:4]};
 	holding <= SRAM_Q_Out+20'b00000000000000000001+((addrHolding2==addrHolding3)?1:0)+((addrHolding2==addrHolding4)?1:0)+((addrHolding2==addrHolding5)?1:0);
 	DvalHolding <= Dval;
 	end
@@ -136,6 +138,7 @@ always@ (posedge iPclk) begin
 				holding <= SRAM_Q_Out;
 				addrHolding <= PixCount;
 				
+				
 				if(CumVal > 192000 && ~redFound) begin
 					redFound <=1;
 					redVal <= PixCount;
@@ -165,41 +168,36 @@ always@ (posedge iPclk) begin
 	DvalHolding2 <= DvalHolding;
 
 	
-	
-	
-	//if (iY_Cont < 255) begin
-		if((DISP_SRAM_Q_Out>>4 > ((iX_Cont)))&(iY_Cont< 256)) begin 
-		
-		if(iY_Cont[7:0] == redVal) begin
-		Gr_Out_His1 <= 16'b0;
-		Gr_Out_His2 <= 16'b0000001111111111;
+		if((iY_Cont[7:0] == redVal)&(iY_Cont< 256)) begin
+			Gr_Out_His1 <= 16'b0;
+			Gr_Out_His2 <= 16'b0000001111111111;
+			Gr_Out_Cum1 <= 16'b0;
+			Gr_Out_Cum2 <= 16'b0000001111111111;
 		end
 		
 		else begin
+
+		if((DISP_SRAM_Q_Out>>4 > ((iX_Cont)))&(iY_Cont< 256)) begin 
+		
+
 		Gr_Out_His1 <= 16'b1111111111111111;
 		Gr_Out_His2 <= 16'b1111111111111111;
+
 		end
-		end
-		
 		else begin 
 		Gr_Out_His1 <= 16'b0;
 		Gr_Out_His2 <= 16'b0;
 		end
 	
 		if((CUM_SRAM_Q_Out>>9 > (iX_Cont))&(iY_Cont<256)) begin 
-		
-		if(iY_Cont[7:0] == redVal) begin
-		Gr_Out_Cum1 <= 16'b0;
-		Gr_Out_Cum2 <= 16'b0000001111111111;
-		end
-		else begin
+
 		Gr_Out_Cum1 <= 16'b1111111111111111;//16'b1111111111111111;
 		Gr_Out_Cum2 <= 16'b1111111111111111;
-		end
 		end
 		else begin 
 		Gr_Out_Cum1 <= 16'b0;
 		Gr_Out_Cum2 <= 16'b0;
+		end
 		end
 //	end
 //	else begin

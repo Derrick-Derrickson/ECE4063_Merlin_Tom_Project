@@ -1,5 +1,5 @@
 Flow report for DE2_70
-Thu May 26 19:18:50 2016
+Thu May 26 20:49:05 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -40,15 +40,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Flow Summary                                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Flow Status                        ; Successful - Thu May 26 19:18:50 2016            ;
+; Flow Status                        ; Successful - Thu May 26 20:49:05 2016            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; DE2_70                                           ;
 ; Top-level Entity Name              ; DE2_70                                           ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C70F896C6                                     ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 2,943 / 68,416 ( 4 % )                           ;
-;     Total combinational functions  ; 2,667 / 68,416 ( 4 % )                           ;
+; Total logic elements               ; 2,968 / 68,416 ( 4 % )                           ;
+;     Total combinational functions  ; 2,687 / 68,416 ( 4 % )                           ;
 ;     Dedicated logic registers      ; 1,410 / 68,416 ( 2 % )                           ;
 ; Total registers                    ; 1480                                             ;
 ; Total pins                         ; 530 / 622 ( 85 % )                               ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/26/2016 19:18:05 ;
+; Start date & time ; 05/26/2016 20:48:20 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE2_70              ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+-----------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                                     ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+-----------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 57277343980402.146425428436580                            ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 57277343980402.146425970047544                            ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                               ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                 ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                                      ; --            ; --          ; eda_simulation ;
@@ -106,12 +106,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:08     ; 1.0                     ; 535 MB              ; 00:00:08                           ;
-; Fitter                    ; 00:00:23     ; 1.5                     ; 1185 MB             ; 00:00:37                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 478 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 512 MB              ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:03     ; 1.0                     ; 441 MB              ; 00:00:02                           ;
-; Total                     ; 00:00:41     ; --                      ; --                  ; 00:00:53                           ;
+; Analysis & Synthesis      ; 00:00:08     ; 1.0                     ; 533 MB              ; 00:00:08                           ;
+; Fitter                    ; 00:00:23     ; 1.7                     ; 1190 MB             ; 00:00:37                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 478 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 508 MB              ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 448 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:40     ; --                      ; --                  ; 00:00:53                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

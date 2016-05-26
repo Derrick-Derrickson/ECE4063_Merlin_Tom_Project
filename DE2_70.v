@@ -434,6 +434,7 @@ wire	[9:0]	oVGA_B;   				//	VGA Blue[9:0]
 reg		[1:0]	rClk;
 wire			sdram_ctrl_clk;
 
+reg AltFrame;
 
 wire [7:0] thresh;
 //=============================================================================
@@ -541,6 +542,9 @@ wire 	[11:0] GREY;
 wire	[15:0] grey_data1, grey_data2;
 wire GVAL;
 
+always @(posedge AltFrame) begin
+	AltFrame = ~AltFrame;
+end
 
 Greyscale wine1 (.iclk(CCD_PIXCLK),
 						.ired_input(sCCD_R),.igreen_input(sCCD_G),.iblue_input(sCCD_B),
@@ -564,8 +568,11 @@ Histo H0(
 	.threshOut(thresh));
 
 
-wire [15:0] wr1_data = iSW[1]?(iSW[2]?(iSW[3]?Gr_Out_His_D1:Gr_Out_Cum_D1) : grey_data1): {sCCD_G[11:7],	 sCCD_B[11:2]};
-wire [15:0] wr2_data = iSW[1]?(iSW[2]?(iSW[3]?Gr_Out_His_D2:Gr_Out_Cum_D2) : grey_data2): {sCCD_G[6:2],    sCCD_R[11:2]};
+//wire [15:0] wr1_data = (iSW[1])?(iSW[2]?(iSW[3]?Gr_Out_His_D1:Gr_Out_Cum_D1) : grey_data1): {sCCD_G[11:7],	 sCCD_B[11:2]};
+//wire [15:0] wr2_data = (iSW[1])?(iSW[2]?(iSW[3]?Gr_Out_His_D2:Gr_Out_Cum_D2) : grey_data2): {sCCD_G[6:2],    sCCD_R[11:2]};
+
+wire [15:0] wr1_data = (iSW[3]|iSW[0])?(grey_data1):(iSW[1]? (Gr_Out_His_D1):(iSW[2]?Gr_Out_Cum_D1:{sCCD_G[11:7],	 sCCD_B[11:2]}));
+wire [15:0] wr2_data = (iSW[3]|iSW[0])?(grey_data2):(iSW[1]? (Gr_Out_His_D2):(iSW[2]?Gr_Out_Cum_D2:{sCCD_G[6:2],    sCCD_R[11:2]}));
 
 // LK: The SDRAM is used as a frame buffer using two of these Sdram_Control_4Port modules -  one for each SDRAM chip on the DE2-70 board.
 //     Camera data is loaded into the FIFO Write Side 1 and read out by the LCD display driver.
@@ -592,10 +599,10 @@ Sdram_Control_4Port	u7	(	//	HOST Side
 							.RD1_MAX_ADDR(800*480),
 							.RD1_LENGTH(9'h100),							// LK: SDRAM line length of 256 - do not alter!
 							.RD1_LOAD(!DLY_RST_0),							// LK: Reset write FIFO feeding SDRAM chip.
-																			// LK:  After a hot reset you need to flush the FIFO
+							.RD1_CLK(ltm_nclk),												// LK:  After a hot reset you need to flush the FIFO
 																			//		to remove 256 words remaining before the memory is
 																			//		properly reset.
-							.RD1_CLK(ltm_nclk),								// LK: LCD display for reading data
+																			// LK: LCD display for reading data
 							
 							//	SDRAM Side
 						    .SA(oDRAM0_A[11:0]),
@@ -654,7 +661,7 @@ I2C_CCD_Config 		u9	(	//	Host Side
 							.iExposure(16'h0),
 							.iZOOM_MODE_SW(iSW[16]),
 							.iEXPOSURE_ADJ(iKEY[1]),
-							.iEXPOSURE_DEC_p(iSW[0]),
+							.iEXPOSURE_DEC_p(iSW[15]),
 							.iMIRROR_SW(iSW[17]),
 							//	I2C Side
 							.I2C_SCLK(GPIO_1[20]),
@@ -668,7 +675,7 @@ touch_tcon			u10	( .iCLK(ltm_nclk),			// Display clock running @ 33 MHz
 							// sdram side
 							.iREAD_DATA1(Read_DATA1),	// LK: read SDRAM pixel values.
 							.iREAD_DATA2(Read_DATA2),	// LK: read SDRAM pixel values.
-							.iTestMode(iSW[0]),
+							.iTestMode(iSW[3]),
 							.oREAD_SDRAM_EN(Read),		// LK: 1 causes new data to be read on next ltm_nclk edge.
 														// LK: 0 means data does not change.
 							// lcd side
