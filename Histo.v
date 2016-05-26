@@ -104,7 +104,7 @@ always@ (posedge iPclk) begin
 	state <= 0;
 	PixCount <= 0;
 	addrHolding <= {4'b0000,Grey[11:4]};
-	holding <= SRAM_Q_Out+20'b00000000000000000001+((addrHolding2==addrHolding3)?1:0)+((addrHolding2==addrHolding4)?1:0)+((addrHolding2==addrHolding5)?1:0)+((addrHolding2==addrHolding6)?1:0);
+	holding <= SRAM_Q_Out+20'b00000000000000000001+((addrHolding2==addrHolding3)?1:0)+((addrHolding2==addrHolding4)?1:0)+((addrHolding2==addrHolding5)?1:0);
 	DvalHolding <= Dval;
 	end
 	
@@ -191,7 +191,7 @@ always@ (posedge iPclk) begin
 		Gr_Out_His2 <= 16'b0;
 		end
 	
-		if((CUM_SRAM_Q_Out>>10 > (iX_Cont))&(iY_Cont<256)) begin 
+		if((CUM_SRAM_Q_Out>>9 > (iX_Cont))&(iY_Cont<256)) begin 
 		
 		if(iY_Cont[7:0] == redVal) begin
 		Gr_Out_Cum1 <= 16'b0;
