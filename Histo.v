@@ -104,7 +104,7 @@ always@ (posedge iPclk) begin
 	state <= 0;
 	PixCount <= 0;
 	addrHolding <= {4'b0000,Grey[11:4]};
-	holding <= SRAM_Q_Out+20'b00000000000000000001+((addrHolding3==addrHolding4)?1:0)+((addrHolding3==addrHolding5)?1:0)+((addrHolding3==addrHolding6)?1:0)+((addrHolding3==addrHolding7)?1:0);
+	holding <= SRAM_Q_Out+20'b00000000000000000001+((addrHolding2==addrHolding3)?1:0)+((addrHolding2==addrHolding4)?1:0)+((addrHolding2==addrHolding5)?1:0)+((addrHolding2==addrHolding6)?1:0);
 	DvalHolding <= Dval;
 	end
 	
