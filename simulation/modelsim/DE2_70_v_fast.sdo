@@ -24,10 +24,10 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "DE2_70")
-  (DATE "05/26/2016 20:49:05")
+  (DATE "05/27/2016 14:08:31")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 64-Bit")
-  (VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version")
+  (VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition")
   (DIVIDER .)
   (TIMESCALE 1 ps)
 

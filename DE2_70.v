@@ -434,8 +434,6 @@ wire	[9:0]	oVGA_B;   				//	VGA Blue[9:0]
 reg		[1:0]	rClk;
 wire			sdram_ctrl_clk;
 
-reg AltFrame;
-
 wire [7:0] thresh;
 //=============================================================================
 // Structural coding
@@ -535,6 +533,7 @@ sdram_pll 			u6	(	.inclk0(iCLK_50_3),
 							.c2(oDRAM1_CLK)
 						);
 
+//define our parameters
 assign CCD_MCLK = rClk[0];
 wire [15:0] Gr_Out_His_D1, Gr_Out_His_D2;
 wire [15:0] Gr_Out_Cum_D1, Gr_Out_Cum_D2;
@@ -542,10 +541,7 @@ wire 	[11:0] GREY;
 wire	[15:0] grey_data1, grey_data2;
 wire GVAL;
 
-always @(posedge AltFrame) begin
-	AltFrame = ~AltFrame;
-end
-
+//initalise our greyscale converter
 Greyscale wine1 (.iclk(CCD_PIXCLK),
 						.ired_input(sCCD_R),.igreen_input(sCCD_G),.iblue_input(sCCD_B),
 						.ix_pos(X_Cont),.iy_pos(Y_Cont),
@@ -554,7 +550,7 @@ Greyscale wine1 (.iclk(CCD_PIXCLK),
 						.ogrey_checkd1(GREY),.oGVALd(GVAL));
 
 
-
+//initalise our histogram generator
 Histo H0(
 	.iPclk(CCD_PIXCLK),
 	.iY_Cont(Y_Cont),
@@ -571,6 +567,7 @@ Histo H0(
 //wire [15:0] wr1_data = (iSW[1])?(iSW[2]?(iSW[3]?Gr_Out_His_D1:Gr_Out_Cum_D1) : grey_data1): {sCCD_G[11:7],	 sCCD_B[11:2]};
 //wire [15:0] wr2_data = (iSW[1])?(iSW[2]?(iSW[3]?Gr_Out_His_D2:Gr_Out_Cum_D2) : grey_data2): {sCCD_G[6:2],    sCCD_R[11:2]};
 
+//multiplex in various images, so all can be displayed
 wire [15:0] wr1_data = (iSW[3]|iSW[0])?(grey_data1):(iSW[1]? (Gr_Out_His_D1):(iSW[2]?Gr_Out_Cum_D1:{sCCD_G[11:7],	 sCCD_B[11:2]}));
 wire [15:0] wr2_data = (iSW[3]|iSW[0])?(grey_data2):(iSW[1]? (Gr_Out_His_D2):(iSW[2]?Gr_Out_Cum_D2:{sCCD_G[6:2],    sCCD_R[11:2]}));
 

@@ -1,3 +1,9 @@
+///this module converts RGB values into greyscale
+//this module also syncs the output by storing it with a register, to meet timing requiremnts for our histogram file.
+//Most of this file is taken from the testbench example.
+
+//the only thing new is the way grey is calculated, and the delayed (Registered) values. 
+
 module Greyscale (iclk, 
 							ired_input, igreen_input, iblue_input, 
 							ix_pos, iy_pos, 
@@ -14,6 +20,7 @@ module Greyscale (iclk,
 	  end
 	endfunction
 	
+	//define default paramters
 	parameter num_rows =32;
 	parameter num_cols =32;
 	parameter full_frame_rows =36;
@@ -31,11 +38,13 @@ module Greyscale (iclk,
 	output reg oGVALd;
 
 	wire [num_bits_rgb-1:0] grey;
-	assign grey = (2989 * ired_input + 5870 * igreen_input + 1140 * iblue_input)/10000;
+	//special maths to go wayyyy faster
+	assign grey = ((3 * ired_input + 6 * igreen_input + 1 * iblue_input)*205)>>11;
 
 	assign odata_out1 = {grey[11:7],grey[11:2]};
 	assign odata_out2 = {grey[6:2],grey[11:2]};
 	
+	//sync the new grey values with the clock.
 	always @(posedge iclk) begin
 	
 	 ogrey_checkd1<=grey;
